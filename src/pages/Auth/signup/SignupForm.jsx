@@ -22,7 +22,7 @@ const formSchema = z.object({
     .optional(),
 });
 const SignupForm = () => {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,11 +33,13 @@ const SignupForm = () => {
   });
   const onSubmit = (data) => {
     // Handle form submission here
-    dispatch(register(data))
+    dispatch(register(data));
     console.log("signup form", data);
   };
   return (
     <div className="space-y-5">
+      <h2 className="text-center text-xl">Id-testuser@gmail.com</h2>
+      <h2 className="text-center text-xl">Pass-testuser@123</h2>
       <h1 className="text-center text-xl">Register</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
